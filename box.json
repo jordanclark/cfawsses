@@ -1,12 +1,12 @@
 {
     "name":"cfawsses",
     "slug":"cfawsses",
-    "version":"0.5.0",
+    "version":"0.5.1",
     "author":"Jordan Clark <jordanclark@gmail.com>",
     "keywords":[
         "ses",
-		"aws ses",
-		"aws",
+        "aws ses",
+        "aws",
         "email",
         "smtp",
         "api",
@@ -14,7 +14,7 @@
     ],
     "shortDescription":"API client for AWS SES (Simple Email Service)",
     "type":"modules",
-    "location":"jordanclark/cfawsses#v0.5.0",
+    "location":"jordanclark/cfawsses#v0.5.1",
     "repository":{
         "URL":"https://github.com/jordanclark/cfawsses.git",
         "type":"GIT"
