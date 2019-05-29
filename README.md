@@ -18,8 +18,12 @@ This client is just a very thin basic client that only handles basic tasks to ge
 - DeleteVerifiedEmailAddress
 - ListVerifiedEmailAddresses
 
-# Changes
-2019-05-29 Initial release
+## To Install
+Run the following from commandbox:
+`box install cfawsses`
 
-# API documentation
+## Changes
+2019-05-29 Open source release
+
+## API documentation
 https://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html
