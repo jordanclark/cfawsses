@@ -1,4 +1,4 @@
-# aws ses
+# cfawsses
 AWS SES ColdFusion API Client
 
 This client is just a very thin basic client that only handles basic tasks to get started sending email on SES. Only the following methods are implimented:
