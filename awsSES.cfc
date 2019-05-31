@@ -97,7 +97,7 @@ component {
 			}
 		}
 		this.debugLog( "#arguments.args.action# Response:" );
-		this.debugLog( http );
+		//this.debugLog( http );
 		out.response= toString( http.fileContent );
 		out.statusCode = http.responseHeader.Status_Code ?: 500;
 		this.debugLog( out.statusCode );
