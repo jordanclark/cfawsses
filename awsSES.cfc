@@ -245,7 +245,6 @@ component {
 		};
 		var out= "";
 		var x= 0;
-		var delay= 0;
 		if ( len( arguments.replyTo ) ) {
 			for ( x=1 ; x<=listLen( arguments.replyTo ) ; x++ ) {
 				args[ "ReplyToAddresses.member.#x#" ]= trim( listGetAt( arguments.replyTo, x ) );
@@ -278,10 +277,10 @@ component {
 			args[ "Message.Body.Html.Charset" ]= arguments.charSet;
 		}
 		if ( this.throttleDelay > 0 && this.lastSend > 0 ) {
-			delay= this.throttleDelay - ( getTickCount() - this.lastSend );
-			this.debugLog( "!!AUTOMATIC AWS-SES THROTTLE OF #delay#/ms" );
-			if ( delay > 0 ) {
-				cfthread( duration=delay, action="sleep" );
+			var wait= this.throttleDelay - ( getTickCount() - this.lastSend );
+			if ( wait > 0 ) {
+				this.debugLog( "!!AUTOMATIC AWS-SES THROTTLE OF #wait#/ms" );
+				sleep( wait );
 			}
 		}
 		out= this.apiRequest( verb= "POST", args= args, parse= true );
