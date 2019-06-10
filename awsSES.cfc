@@ -31,7 +31,7 @@ component {
 		if ( isNumeric( arguments.throttle ) ) {
 			this.throttleDelay= arguments.throttle;
 		} else {
-			//  auto 
+			// auto 
 			check= GetSendQuota();
 			if ( check.success && check.MaxSendRate > 0 ) {
 				this.throttleDelay= ( ( 1 / check.MaxSendRate ) * 1000 ) - 100;
@@ -82,7 +82,7 @@ component {
 		};
 		arguments.headers[ "Date" ]= getHttpTimeString( now() );
 		arguments.headers[ "X-Amzn-Authorization" ]= "AWS3-HTTPS AWSAccessKeyId=#this.accessKeyId#, Algorithm=HmacSHA256, Signature=" & toBase64( HMAC_SHA256( this.secretAccessKey, arguments.headers[ "Date" ] ) );
-		//  replaceList( urlEncodedFormat( arguments.args[ "Signature" ] ), "%2D", "-" ) 
+		// replaceList( urlEncodedFormat( arguments.args[ "Signature" ] ), "%2D", "-" ) 
 		this.debugLog( "#arguments.args.action# Request:" );
 		cfhttp( result="http", method=arguments.verb, url=this.endPoint, charset="utf-8", throwOnError=false, timeOut=this.httpTimeOut ) {
 			for ( item in arguments.headers ) {
@@ -122,7 +122,7 @@ component {
 		} else {
 			out.success= true;
 		}
-		//  parse response 
+		// parse response 
 		if ( arguments.parse ) {
 			try {
 				out.xml= xmlParse( out.response  );
