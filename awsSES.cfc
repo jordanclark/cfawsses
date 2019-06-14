@@ -171,7 +171,7 @@ component {
 				}
 			} catch (any cfcatch) {
 				req.success= false;
-				req.errorDetail= "Failed to parse xml response: " & cfcatch.message;
+				req.error= "Failed to parse xml response: " & cfcatch.message;
 			}
 		}
 		return req;
@@ -189,7 +189,7 @@ component {
 				req.MaxSendRate= req.xml.XmlRoot.GetSendQuotaResult.MaxSendRate.XmlText;
 			} catch (any cfcatch) {
 				req.success= false;
-				req.errorDetail= "Failed to parse xml response: " & cfcatch.message;
+				req.error= "Failed to parse xml response: " & cfcatch.message;
 			}
 		}
 		return req;
@@ -217,7 +217,7 @@ component {
 				}
 			} catch (any cfcatch) {
 				req.success= false;
-				req.errorDetail= "Failed to parse xml response: " & cfcatch.message;
+				req.error= "Failed to parse xml response: " & cfcatch.message;
 			}
 		}
 		return req;
@@ -292,7 +292,7 @@ component {
 				out.messageID= out.xml.XmlRoot.SendEmailResult.MessageId.XmlText;
 			} catch (any cfcatch) {
 				out.success= false;
-				out.errorDetail= "Failed to parse xml response: " & cfcatch.message;
+				out.error= "Failed to parse xml response: " & cfcatch.message;
 			}
 		}
 		return out;
