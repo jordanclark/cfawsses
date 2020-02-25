@@ -100,7 +100,6 @@ component {
 		//this.debugLog( http );
 		out.response= toString( http.fileContent );
 		out.statusCode = http.responseHeader.Status_Code ?: 500;
-		this.debugLog( out.statusCode );
 		if ( len( out.error ) ) {
 			out.success= false;
 		} else if ( out.statusCode == "401" ) {
@@ -136,6 +135,7 @@ component {
 		if ( len( out.error ) ) {
 			out.success= false;
 		}
+		this.debugLog( out.statusCode & " " & out.error );
 		return out;
 	}
 
