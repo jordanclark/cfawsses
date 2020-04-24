@@ -64,7 +64,12 @@ component {
 				request.log( arguments.input );
 			}
 		} else if( this.debug ) {
-			cftrace( text=( isSimpleValue( arguments.input ) ? arguments.input : "" ), var=arguments.input, category="AWS SES", type="information" );
+			var info= ( isSimpleValue( arguments.input ) ? arguments.input : serializeJson( arguments.input ) );
+			cftrace(
+				var= "info"
+			,	category= "AWS SES"
+			,	type= "information"
+			);
 		}
 		return;
 	}
